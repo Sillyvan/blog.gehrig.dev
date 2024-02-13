@@ -1,24 +1,18 @@
 ---
+import CallToAction from './CallToAction.astro'
+
+const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-  <div>
-    This blog is built with 
-    <a class="animated" href={"https://github.com/flexdinesh/blogster"} target="_blank"> Blogster</a> 
-    and hosted in
-    <a class="animated" href={"https://www.netlify.com"}> Netlify</a>.
-  </div>
+  <CallToAction />
+  <section class="py-8">
+    <div class="container">
+      <p>
+        &copy; {currentYear} - Starter Theme for <a href="https://astro.build/">Astro</a>. Made with ❤️ by <a
+          href="https://github.com/markteekman">Mark Teekman</a
+        >.
+      </p>
+    </div>
+  </section>
 </footer>
-
-<style>
-  footer {
-    grid-area: footer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.875rem;
-    margin-top: 1rem;
-    line-height: 1.75;
-  }
-</style>

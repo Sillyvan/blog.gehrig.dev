@@ -1,52 +1,65 @@
-# Blogster
+# Accessible Astro Starter
 
-Theme: **minimal**
+![social-preview-image](https://user-images.githubusercontent.com/3909046/219942674-9894853e-def8-4180-84b8-6b577dacfcaa.png)
 
-Blogster is a collection of beautiful, accessible and performant blog templates built with [Astro](https://astro.build) and [Markdoc](https://markdoc.dev).
+Accessible Astro Starter is a ready to use, SEO and a11y friendly blogging theme. It contains plenty of accessible components to build several page types, Tailwind CSS to help you build faster and example pages such as a dynamic Blog, 404, Markdown and MDX. This theme is designed to help you build your project faster and provide a solid base for accessibility!
 
-Check out the demo here - [Blogster minimal template](https://blogster-minimal.netlify.app).
+🚀 [Live Preview](https://accessible-astro.netlify.app/)
 
-## Minimal Template
+## ♿ (Accessibility) Features
 
-A light weight theme built with plain old HTML and CSS. No external fonts or icons. Zero JavaScript. You get a full functional nice looking blog that loads super fast.
+- Astro 4.0
+- Tailwind CSS support
+- Prettier integration with `prettier-plugin-astro` and `prettier-plugin-tailwind`
+- ESLint integration with strict accessibility settings for `eslint-plugin-jsx-a11y`
+- Markdown and MDX support with examples included in the theme
+- Uses the awesome `astro-icon` package for the icons
+- Excellent Lighthouse/PageSpeed scores
+- Accessible landmarks such as `header`, `main`, `footer`, `section` and `nav`
+- Outline focus indicator which works on dark and light backgrounds
+- Several `aria` attributes which provide a better experience for screen reader users
+- `[...page].astro` and `[post].astro` demonstrate the use of dynamic routes and provide a basic blog with breadcrumbs and pagination
+- `404.astro` provides a custom 404 error page which you can adjust to your needs
+- `Header.astro` component included in the `DefaultLayout.astro` layout
+- `Footer.astro` component included in the `DefaultLayout.astro` layout
+- `SkipLinks.astro` component to skip to either the main menu or the main content
+- `Navigation.astro` component with keyboard accessible (dropdown) navigation (arrow keys, escape key)
+- `ResponsiveToggle.astro` component with an accessible responsive toggle button for the mobile navigation
+- `DarkMode.astro` component toggle with accessible button and a user system preferred color scheme setting
+- `SiteMeta.astro` SEO component for setting custom meta data on different pages
+- `.sr-only` utility class for screen reader only text content (hides text visually)
+- `prefers-reduced-motion` disables animations for users that have this preference turned on
+- Ships with many components such as Accordions, Breadcrumbs, Modals, Pagination [and many more](https://accessible-astro.dev/accessible-components)
+- A collection of utility classes such as breakpoints, button classes, font settings, resets and outlines in `src/assets/scss/base`
+- View Transitions (⚠️ see [astro-docs](https://docs.astro.build/en/guides/view-transitions/#accessibility) for accessibility considerations)
 
-- **Lean**. No external fonts or icons. Zero JavaScript. Zero Runtime. Only ~6kB.
-- **Fast**. Fast by default. Astro websites are engineered to be fast and load before you could blink, even when not cached.
-- **Dark mode**. All themes have light/dark mode built-in.
-- **Mobile first**. Responsive and loads fast in all devices.
-- **Accessible**. A well thought out semantic and accessible content.
-- **Perfect lighthouse score.** 100 across the board.
-- **Easy content authoring**. Author content using markdown (`.md`) from your code editor or directly in GitHub.
-- **Extended markdown with [Markdoc](https://markdoc.dev).** Type-safe custom components like YouTube embed, Twitter embed (or anything you want really) in your markdown (`.md`) files.
-- **RSS feed**. Your blog has an RSS feed setup that can be accessed at `/rss.xml`.
-- **SEO**. All pages are setup with all the SEO you might need.
+## 🚀 Getting started
 
-## How do I add content?
+Clone this theme locally and run any of the following commands in your terminal:
 
-All the content is written in markdown (.md) and grouped as `blog` or `projects` in the `content` directory. All the default markdown syntax will work. You also have a few example custom markdown elements like _YouTube embed_, _Twitter embed_, etc. You can create your own custom components too in two easy steps.
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server at `localhost:4321`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
 
-1. Add a markdoc config. Check out the markdoc config in [src/lib/markdoc/config.ts](src/lib/markdoc/config.ts) to learn how to add custom components.
-2. Add a component to render your custom component. Check out the Renderer in [src/components/Renderer.astro](src/components/Renderer.astro).
+## 📦 Other Accessible Astro projects
 
-## How do I make it my blog?
+- [Accessible Astro Dashboard](https://github.com/markteekman/accessible-astro-dashboard/)
+- [Accessible Astro Components](https://github.com/markteekman/accessible-astro-components/)
 
-Easy.
+## ❤️ Helping out
 
-- All content is static and everything is straight forward. Change whatever you need to change.
-- Delete or update the content in `content/{content-group}`. `content-group` could be `blog`, `projects` or `anything`.
-- (Optional) If you need more content types like _Notes_, just create a new dir in `content` and add a new frontmatter validator like [src/lib/markdoc/blog/frontmatter](src/lib/markdoc/blog/frontmatter).
+If you find that something isn't working right then I'm always happy to hear it to improve this starter! You can contribute in many ways and forms. Let me know by either:
 
-## How do I deploy?
+1. [Filing an issue](https://github.com/markteekman/accessible-astro-starter/issues)
+2. [Submitting a pull request](https://github.com/markteekman/accessible-astro-starter/pulls)
+3. [Starting a discussion](https://github.com/markteekman/accessible-astro-starter/discussions)
+4. [Buying me a coffee!](https://www.buymeacoffee.com/markteekman)
 
-`yarn build` will generate a static website in `dist` dir. You can host it with any static hosting. If you need a recommendation, check out [Netlify](netlify.com).
+## ☕ Thank you!
 
-## Credit
+A big thank you to the creators of the awesome Astro static site generator and to all using this starter to make the web a bit more accessible for all people around the world :)
 
-Thanks to other templates that inspired this theme.
-
-- [Official Astro Blog template](https://github.com/withastro/astro/tree/main/examples/blog)
-- [Bear Blog](https://github.com/HermanMartinus/bearblog/).
-
-## License
-
-MIT © [Dinesh Pandiyan](https://github.com/flexdinesh)
+[![buymeacoffee-button](https://user-images.githubusercontent.com/3909046/150683481-be070424-7bb0-4dd7-a3cb-43b5605163f5.png)](https://www.buymeacoffee.com/markteekman)
