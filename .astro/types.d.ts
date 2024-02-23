@@ -1,5 +1,15 @@
 declare module 'astro:content' {
 	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -126,71 +136,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"basic-markdown-style-guide.md": {
-	id: "basic-markdown-style-guide.md";
-  slug: "basic-markdown-style-guide";
+"cool-blog.mdx": {
+	id: "cool-blog.mdx";
+  slug: "cool-blog";
   body: string;
   collection: "blog";
   data: any
-} & { render(): Render[".md"] };
-"draft-post.md": {
-	id: "draft-post.md";
-  slug: "draft-post";
+} & { render(): Render[".mdx"] };
+"test.mdx": {
+	id: "test.mdx";
+  slug: "test";
   body: string;
   collection: "blog";
   data: any
-} & { render(): Render[".md"] };
-"extended-markdown-style-guide.md": {
-	id: "extended-markdown-style-guide.md";
-  slug: "extended-markdown-style-guide";
-  body: string;
-  collection: "blog";
-  data: any
-} & { render(): Render[".md"] };
-"external-link-example.md": {
-	id: "external-link-example.md";
-  slug: "external-link-example";
-  body: string;
-  collection: "blog";
-  data: any
-} & { render(): Render[".md"] };
-"hello-world.md": {
-	id: "hello-world.md";
-  slug: "hello-world";
-  body: string;
-  collection: "blog";
-  data: any
-} & { render(): Render[".md"] };
-"syntax-highlighting.md": {
-	id: "syntax-highlighting.md";
-  slug: "syntax-highlighting";
-  body: string;
-  collection: "blog";
-  data: any
-} & { render(): Render[".md"] };
-};
-"projects": {
-"design-system-boilerplate.md": {
-	id: "design-system-boilerplate.md";
-  slug: "design-system-boilerplate";
-  body: string;
-  collection: "projects";
-  data: any
-} & { render(): Render[".md"] };
-"dev-landing-page.md": {
-	id: "dev-landing-page.md";
-  slug: "dev-landing-page";
-  body: string;
-  collection: "projects";
-  data: any
-} & { render(): Render[".md"] };
-"draft-project.md": {
-	id: "draft-project.md";
-  slug: "draft-project";
-  body: string;
-  collection: "projects";
-  data: any
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 };
 
 	};
