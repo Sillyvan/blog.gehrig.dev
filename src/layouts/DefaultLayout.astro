@@ -8,9 +8,7 @@ import Footer from '../components/Footer.astro';
 const {
   title = 'Astro',
   description = 'A starter project with accessibility features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.',
-  url,
   image = '/social-preview-image.png',
-  author = 'Mark Teekman',
 } = Astro.props;
 ---
 
@@ -29,7 +27,7 @@ const {
       url={Astro.site
         ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
         : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`}
-      image={'image'}
+      image={image}
     />
   </head>
   <body>

@@ -1,15 +1,21 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-import { Card, Pagination } from 'accessible-astro-components';
+import { Card } from 'accessible-astro-components';
 
 const posts = await Astro.glob('../content/blog/*.mdx');
-const allPosts = [] as { title: string; slug: string; description: string }[];
+const allPosts = [] as {
+  title: string;
+  slug: string;
+  description: string;
+  img: string;
+}[];
 posts.forEach(({ getHeadings, frontmatter }) => {
   const { slug, text } = getHeadings()[0];
   allPosts.push({
     title: text,
     description: frontmatter.description,
     slug,
+    img: frontmatter.image,
   });
 });
 ---
@@ -28,13 +34,18 @@ posts.forEach(({ getHeadings, frontmatter }) => {
   <section class='my-12'>
     <div class='container'>
       <p class='text-sm'>
-        <em>Post total posts {allPosts.length}</em>
+        <em>Total posts: {allPosts.length}</em>
       </p>
       <ul class='my-3'>
         {
           allPosts.map((post) => (
             <li>
-              <Card url={'/blog/' + post.slug} title={post.title} footer={''}>
+              <Card
+                url={'/blog/' + post.slug}
+                title={post.title}
+                img={Astro.url + post.img}
+                footer={''}
+              >
                 {post.description}
               </Card>
             </li>
